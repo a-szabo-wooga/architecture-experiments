@@ -29,9 +29,7 @@ public class ServiceLocator
 		// Wire them up:
 		foreach (var kvpair in _services)
 		{
-			var cast = kvpair.Value as IService;
-			cast.DoStuff();
-			cast.Init(this);
+			kvpair.Value.Init(this);
 		}
 	}
 	
@@ -39,7 +37,7 @@ public class ServiceLocator
 	{
 		if (_services.ContainsKey(s))
 		{
-			return _services[s] as IService;
+			return _services[s];
 		}
 		else
 		{

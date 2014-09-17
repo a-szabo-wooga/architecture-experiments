@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EventManager : IService
+public class EventManager : IService, IEventService
 {
 	#region singleton
 	private static readonly EventManager _instance = new EventManager();
@@ -25,6 +25,11 @@ public class EventManager : IService
 	public void DoStuff()
 	{
 		Debug.Log("Event manager here!");
+	}
+
+	public void DoEventRelatedStuff()
+	{
+		Debug.Log("Event manager doing event related stuff here.");
 	}
 	
 	public void Init(ServiceLocator serloc)

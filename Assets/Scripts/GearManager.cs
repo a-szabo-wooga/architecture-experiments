@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GearManager : IService, IGearService
 {
+	#region singleton stuff
 	private static readonly GearManager _instance = new GearManager();
 	private GearManager() { }
 
@@ -14,9 +15,10 @@ public class GearManager : IService, IGearService
 			return _instance;
 		}
 	}
+	#endregion
 	
 	private ServiceLocator _serloc;
-	private IService _evtmgr;
+	private IEventService _evtmgr;
 	
 	public void DoStuff()
 	{
@@ -27,9 +29,9 @@ public class GearManager : IService, IGearService
 	{
 		Debug.Log("Setting up gear manager.");
 		_serloc = serloc;
-		_evtmgr = serloc.GetService("EventManager");
+		_evtmgr = serloc.GetService("EventManager") as IEventService;
 		Debug.Log("Calling event manager: ");
-		_evtmgr.DoStuff();
+		_evtmgr.DoEventRelatedStuff();
 	}
 	
 	public void DoGearRelatedStuff()
