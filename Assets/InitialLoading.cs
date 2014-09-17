@@ -2,11 +2,9 @@
 using System.Collections;
 
 public class InitialLoading : MonoBehaviour
-{
-	private	ServiceLocator SerLock;
-	
+{	
 	void Awake()
 	{
-		SerLock = new ServiceLocator();
+		ServiceLocator.Instance.Init();
 	}
 }

@@ -5,9 +5,22 @@ using UnityEngine;
 
 public class ServiceLocator
 {	
-	private Dictionary<string, IService>	_services = new Dictionary<string, IService>();
-
-	public ServiceLocator()
+	private static readonly ServiceLocator _instance = new ServiceLocator();
+	private ServiceLocator()
+	{
+	}
+	
+	private Dictionary<string, IService> _services = new Dictionary<string, IService>();
+	
+	public static ServiceLocator Instance
+	{
+		get
+		{
+			return _instance;
+		}
+	}
+	
+	public void Init()
 	{
 		// Add services (managers) to dictionary
 		_services.Add("GearManager", GearManager.Instance);
