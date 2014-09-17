@@ -49,6 +49,7 @@
      <Compile Include="Assets\InitialLoading.cs" />
      <Compile Include="Assets\Scripts\EventManager.cs" />
      <Compile Include="Assets\Scripts\GearManager.cs" />
+     <Compile Include="Assets\Scripts\IGearService.cs" />
      <Compile Include="Assets\Scripts\IService.cs" />
      <Compile Include="Assets\Scripts\ServiceLocator.cs" />
   </ItemGroup>

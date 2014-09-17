@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class GearManager : IService
+public class GearManager : IService, IGearService
 {
 	private static readonly GearManager _instance = new GearManager();
 	private GearManager() { }
@@ -30,5 +30,10 @@ public class GearManager : IService
 		_evtmgr = serloc.GetService("EventManager");
 		Debug.Log("Calling event manager: ");
 		_evtmgr.DoStuff();
+	}
+	
+	public void DoGearRelatedStuff()
+	{
+		Debug.Log ("Gear Mgr here, doing some gear related stuff.");
 	}
 }

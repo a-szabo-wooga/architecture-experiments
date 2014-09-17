@@ -20,7 +20,7 @@ public class EventManager : IService
 	#endregion
 	
 	private ServiceLocator _serloc;
-	private IService _gearmgr;
+	private IGearService _gearmgr;
 	
 	public void DoStuff()
 	{
@@ -31,6 +31,8 @@ public class EventManager : IService
 	{
 		Debug.Log("Setting up event manager.");
 		_serloc = serloc;
-		_gearmgr = _serloc.GetService("GearManager");
+		_gearmgr = _serloc.GetService("GearManager") as IGearService;
+		Debug.Log("Calling gear service through IGearService: ");
+		_gearmgr.DoGearRelatedStuff();
 	}
 }
