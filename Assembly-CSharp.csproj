@@ -46,13 +46,21 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\InitialLoading.cs" />
      <Compile Include="Assets\Scripts\EventManager.cs" />
      <Compile Include="Assets\Scripts\GearManager.cs" />
+     <Compile Include="Assets\Scripts\Georg.cs" />
+     <Compile Include="Assets\Scripts\IAGearService.cs" />
+     <Compile Include="Assets\Scripts\IANotherService.cs" />
+     <Compile Include="Assets\Scripts\IAService.cs" />
      <Compile Include="Assets\Scripts\IEventService.cs" />
      <Compile Include="Assets\Scripts\IGearService.cs" />
      <Compile Include="Assets\Scripts\IService.cs" />
+     <Compile Include="Assets\Scripts\InitialLoading.cs" />
      <Compile Include="Assets\Scripts\ServiceLocator.cs" />
+     <Compile Include="Assets\Scripts\SomeOtherScript.cs" />
+     <Compile Include="Assets\Scripts\aGearManager.cs" />
+     <Compile Include="Assets\Scripts\aNotherManager.cs" />
+     <Compile Include="Assets\Scripts\aServiceLocator.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -1,6 +1,4 @@
-﻿using System;
-
-public interface IService
+﻿public interface IService
 {
 	void DoStuff();
 	void Init(ServiceLocator serloc);

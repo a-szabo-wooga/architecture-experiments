@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class ServiceLocator
 {	
+	#region singleton stuff
+
 	private static readonly ServiceLocator _instance = new ServiceLocator();
 	private ServiceLocator()
 	{
 	}
-	
-	private Dictionary<string, IService> _services = new Dictionary<string, IService>();
-	
+
 	public static ServiceLocator Instance
 	{
 		get
@@ -19,20 +19,30 @@ public class ServiceLocator
 			return _instance;
 		}
 	}
-	
+	#endregion
+
+	private Dictionary<string, IService> _services = new Dictionary<string, IService>();
+
 	public void Init()
 	{
-		// Add services (managers) to dictionary
+		AddServices();
+		InitServices();
+	}
+
+	private void AddServices()
+	{
 		_services.Add("GearManager", GearManager.Instance);
 		_services.Add("EventManager", EventManager.Instance);
-		
-		// Wire them up:
+	}
+
+	private void InitServices()
+	{
 		foreach (var kvpair in _services)
 		{
 			kvpair.Value.Init(this);
 		}
 	}
-	
+
 	public IService GetService(string s)
 	{
 		if (_services.ContainsKey(s))
