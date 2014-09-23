@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ValidatorTest : MonoBehaviour {
 
-	[MyAttribute]
+	[MyAttribute(100)]
 	public int SomeInt;
 	
 	private int _somePrivateInt = 123;
